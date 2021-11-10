@@ -27,6 +27,7 @@ services:
       - "ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED=true"
     volumes:
       - ${LICENSE_PATH}:C:\license
+      - .\data\cd:C:\src
     ports:
       - "44002:80"
     links:
@@ -42,6 +43,8 @@ services:
       - "ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED=true"
     volumes:
       - ${LICENSE_PATH}:C:\license
+      - .\data\cm:C:\src
+      - ..\..\..\..\debugger:C:\remote_debugger
     ports:
       - "44001:80"
     links:
